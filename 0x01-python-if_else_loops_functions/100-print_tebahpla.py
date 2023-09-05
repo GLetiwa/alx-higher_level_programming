@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 i = 0
-for c in range(122, 64, -1):
+for c in range(122, 96, -1):
     if c % 2 == 0:
         i = 32
     else:
