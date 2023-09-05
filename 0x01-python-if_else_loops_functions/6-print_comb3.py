@@ -4,4 +4,4 @@ for x in range(10):
         if y < 9:
             print("{}{}".format(x, y), end=', ')
         else:
-            print("{}{}".format(x,y))
+            print("{}{}".format(x, y))
