@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
+def main():
     from calculator_1 import add, sub, mul, div
     import sys
 
@@ -17,3 +17,7 @@ if __name__ == "__main__":
 
     result = ops[operator](a, b)
     print("{} {} {} = {}".format(a, operator, b, result))
+
+
+if __name__ == "__main__":
+    main()
