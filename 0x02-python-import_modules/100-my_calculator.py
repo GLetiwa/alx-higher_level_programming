@@ -10,8 +10,5 @@ if __name__ == "__main__":
     if operator not in ops:
         print("Unknown operator. Available operators: +, -, * and /\n")
         sys.exit(1)
-    if operator == '/' and b == 0:
-        print("Error: Division by zero is not allowed.\n")
-        sys.exit(1)
     result = ops[operator](a, b)
     print("{} {} {} = {}".format(a, operator, b, result))
