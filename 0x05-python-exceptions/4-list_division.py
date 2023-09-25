@@ -8,8 +8,9 @@ def list_division(my_list_1, my_list_2, list_length):
             a = my_list_1[i]
             b = my_list_2[i]
 
-            if (not isinstance(a, (int, float))) or (not isinstance(b, (int, float))):
-                raise TypeError("wrong type")
+            if (not isinstance(a, (int, float))):
+                if (not isinstance(b, (int, float))):
+                    raise TypeError("wrong type")
             if b == 0:
                 raise ZeroDivisionError("division by 0")
             result1 = a / b
