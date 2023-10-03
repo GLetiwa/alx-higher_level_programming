@@ -1,0 +1,25 @@
+# 3-say_my_name.txt
+
+This modules defines a function ``say_my_name(first_name, last_name="")``.
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Grace", "Maiyan")
+My name is Grace Maiyan
+
+>>> say_my_name("John Paul", "The II")
+My name is John Paul The II
+
+>>> say_my_name("Grace")
+My name is Grace
+
+>>> say_my_name(7, "Grace")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("Messi", ["Cristiano", "Kane", "Enzo"])
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
