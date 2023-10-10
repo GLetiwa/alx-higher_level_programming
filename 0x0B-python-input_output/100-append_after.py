@@ -3,6 +3,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """inserts line to a text file"""
     test = ""
     with open(filename, "r") as file:
         for line in file:
