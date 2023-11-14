@@ -1,0 +1,53 @@
+# 0-add_integer.txt
+
+=======
+The module defines how to use a function that carries out integer addition
+=======
+
+integers
+::
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+
+negative integers
+::
+    >>> add_integer(2, -3)
+    -1
+
+floating numbers
+::
+    >>> add_integer(1.0, 2.0)
+    3
+
+floats casted to int before addition
+::
+    >>> add_integer(3.5, 2.4)
+    5
+
+adding floating and non-floating values
+::
+    >>> add_integer(3, 2.5)
+    5
+
+second argument if not provided becomes 98 by default
+::
+    >>> add_integer(1)
+    99
+
+non-int/float values
+::
+    >>> add_integer("Good", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+    >>> add_integer(2, "hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+if both are non-int/float, message is printed for first argument
+::
+    >>> add_integer("hello", "Grace") 
+    Traceback (most recent call last):
+    TypeError: a must be an integer
