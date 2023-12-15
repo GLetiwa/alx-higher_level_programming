@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""ists all states with name starting with N from the database hbtn_0e_0_usa"""
-
+"""
+displays all values in the states table
+where name matches the argument
+"""
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        sys.exit(1)
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+    username, password, database, state_name = sys.argv[1], sys.argv[2], \
+        sys.argv[3], sys.argv[4]
 
     cursor = None
     connection = None
@@ -20,18 +21,19 @@ if __name__ == "__main__":
                 passwd=password,
                 db=database
             )
-        # create a cursor
+
         cursor = connection.cursor()
 
-        # SQL Querry to retrieve states starting with N
-        cursor.execute("SELECT  * FROM states WHERE name LIKE 'N%' \
-                ORDER BY id ASC")
+        # Execute the SQL Query
+        query = "SELECT * FROM states WHERE name = '{}' \
+                ORDER BY id ASC".format(state_name)
+        cursor.execute(query)
 
-        # Fetch all rows
         states = cursor.fetchall()
 
         for state in states:
             print(state)
+
     except MySQLdb.Error as e:
         print("Error connecting to MySQL: {}".format(e))
 
