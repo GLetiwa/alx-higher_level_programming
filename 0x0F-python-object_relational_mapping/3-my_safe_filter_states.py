@@ -23,13 +23,12 @@ if __name__ == "__main__":
             db=database
         )
 
-        cursor = connection.cursor()
+        cur = connection.cursor()
 
         # Execute the SQL query to retrieve states
-        query = "SELECT * FROM states WHERE name LIKE %s"
-        cursor.execute(query, (state_name,))
+        cur.execute("SELECT * FROM states WHERE name LIKE %s", (state_name,))
 
-        states = cursor.fetchall()
+        states = cur.fetchall()
 
         for state in states:
             print(state)
@@ -38,7 +37,7 @@ if __name__ == "__main__":
         print("Error connecting to MySQL: {}".format(e))
 
     finally:
-        if cursor:
-            cursor.close()
+        if cur:
+            cur.close()
         if connection:
             connection.close()
