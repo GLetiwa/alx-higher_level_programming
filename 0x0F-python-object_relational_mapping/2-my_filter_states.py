@@ -27,8 +27,8 @@ if __name__ == "__main__":
         cursor = connection.cursor()
 
         # Execute the SQL Query
-        query = "SELECT * FROM states WHERE name = '{}' \
-                ORDER BY id ASC".format(state_name)
+        query = "SELECT * FROM states WHERE name \
+                LIKE BINARY '{}'".format(state_name)
         cursor.execute(query)
 
         states = cursor.fetchall()
