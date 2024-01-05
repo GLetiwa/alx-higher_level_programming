@@ -1,4 +1,4 @@
 #!/bin/bash
 # Display the size of the response body in bytes for a given URL
 
-curl -s "$1" | wc -c
+curl -sI GET "$1" | grep -i "Content-Length" | cut -d " " -f2
