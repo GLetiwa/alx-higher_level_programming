@@ -6,9 +6,7 @@ displays value of a response variable
 import urllib.request
 import sys
 
-with urllib.request.urlopen(sys.argv[1]) as response:
-    if 'X-Request-Id' in response.headers:
-        x_request_id = response.headers['X-Request-Id']
-        print(x_request_id)
-    else:
-        print("Header 'X-Request-Id' not found")
+if __name__ == "__main__":
+    request = urllib.request.Request(sys.argv[1])
+    with urllib.request.urlopen(request) as response:
+        print(dict(response.headers).get("X-Request-Id"))
